@@ -30,6 +30,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/templates/index.html',
+            inject: 'body',
         }),
         new CleanWebpackPlugin(),
     ],
