@@ -38,6 +38,20 @@ module.exports = {
                     // },
                 ],
             },
+            {
+                test: /\.pug/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                    },
+                    {
+                        loader: 'pug-html-loader',
+                        options: {
+                            pretty: true,
+                        }
+                    },
+                ],
+            },
         ],
     },
     plugins: [
@@ -45,8 +59,14 @@ module.exports = {
             filename: './stylesheets/main.css',
         }),
         new HtmlWebpackPlugin({
-            template: './src/templates/index.html',
+            template: './src/templates/index.pug',
             inject: 'body',
+            filename: 'index.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/templates/access.pug',
+            inject: 'body',
+            filename: 'access.html',
         }),
         new CleanWebpackPlugin(),
     ],
