@@ -23,12 +23,13 @@ module.exports = {
                 ],
             },
             {
-                test: /\.png/,
+                test: /\.(png|jpg)/,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: 'file-loader',
                         options: {
                             esModule: false,
+                            name: 'images/[name].[ext]',
                         },
                     },
                 ],
