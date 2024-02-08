@@ -35,6 +35,9 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader',
+                        options: {
+                            sourceMap: false, //コンソール上でSCSSを確認したいときにtrueにする
+                        },
                     },
                     {
                         loader: 'sass-loader',//loaderは下から上に適応
