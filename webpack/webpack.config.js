@@ -9,6 +9,9 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: './javascripts/main.js',
     },
+    devServer: {
+        static: path.resolve(__dirname,'src'),
+    },
     module: {
         rules: [
             {
@@ -67,6 +70,11 @@ module.exports = {
             template: './src/templates/access.pug',
             inject: 'body',
             filename: 'access.html',
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/templates/members/taro.pug',
+            inject: 'body',
+            filename: 'members/taro.html',
         }),
         new CleanWebpackPlugin(),
     ],
